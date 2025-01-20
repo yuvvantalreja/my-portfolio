@@ -3,12 +3,22 @@ import { Menu as MenuIcon, X as XIcon, Github as GithubIcon, Linkedin as Linkedi
          Mail as MailIcon, ExternalLink as ExternalLinkIcon, Loader2 } from 'lucide-react';
 
 const Portfolio = () => {
+
+  const getImagePath = (path) => {
+    // If running in development, use direct path
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+      return path;
+    }
+    // If in production (GitHub Pages), add the repository name
+    return `/my-portfolio${path}`;
+  };
+
   const projects = [
     {
       title: "Taskly - Task Management System",
       description: "Built a full-stack task management application with real-time updates, OAuth2.0 authentication, and Firebase notifications. Features include task prioritization, deadline tracking, and team collaboration tools.",
       tags: ["React", "Node.js", "Firebase", "OAuth2.0", "REST API"],
-      image: "/images/taskly.png",
+      image: getImagePath("/images/taskly.png"),
       githubLink: "https://github.com/yuvvantalreja/taskly",
       demoLink: "#"
     },
