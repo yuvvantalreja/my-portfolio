@@ -4,21 +4,12 @@ import { Menu as MenuIcon, X as XIcon, Github as GithubIcon, Linkedin as Linkedi
 
 const Portfolio = () => {
 
-  const getImagePath = (path) => {
-    // If running in development, use direct path
-    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-      return path;
-    }
-    // If in production (GitHub Pages), add the repository name
-    return `/my-portfolio${path}`;
-  };
-
   const projects = [
     {
       title: "Taskly - Task Management System",
       description: "Built a full-stack task management application with real-time updates, OAuth2.0 authentication, and Firebase notifications. Features include task prioritization, deadline tracking, and team collaboration tools.",
       tags: ["React", "Node.js", "Firebase", "OAuth2.0", "REST API"],
-      image: getImagePath("/images/taskly.png"),
+      image: "/my-portfolio/images/taskly.png",
       githubLink: "https://github.com/yuvvantalreja/taskly",
       demoLink: "#"
     },
@@ -26,7 +17,7 @@ const Portfolio = () => {
       title: "Dynamic Memory Allocator",
       description: "Implemented a custom memory allocator in C with efficient memory management strategies. Achieved performance comparable to standard malloc while reducing memory fragmentation by 40% through optimized block coalescing.",
       tags: ["C", "Systems Programming", "Memory Management", "Algorithms"],
-      image: "/images/memory.png",
+      image: "/my-portfolio/images/memory.png",
       githubLink: "https://github.com/yuvvantalreja/dynamic-memory-allocator",
       demoLink: "#"
     },
@@ -34,7 +25,7 @@ const Portfolio = () => {
       title: "Network Operations Cost Analysis",
       description: "Researched and analyzed performance implications of kernel bypass architectures. Developed benchmarking tools to measure latency and throughput, revealing 30% performance improvement in network operations.",
       tags: ["C++", "Networking", "Performance Analysis", "Linux Kernel"],
-      image: "/images/DPDK.png",
+      image: "/my-portfolio/images/DPDK.png",
       githubLink: "https://github.com/yuvvantalreja/deconstructing-the-cost-of-network-operations-in-Kernel-Bypass-Architectures",
       demoLink: "#"
     },
@@ -42,7 +33,7 @@ const Portfolio = () => {
       title: "Optical Character Recognition",
       description: "Engineered a sophisticated OCR system utilizing CRNN architecture with BiGRU, achieving 98% accuracy. Optimized training time by 50% and increased F1 score by 10%.",
       tags: ["Python", "PyTorch", "Deep Learning", "Computer Vision"],
-      image: "/images/ocr.jpg",
+      image: "/my-portfolio/images/ocr.jpg",
       githubLink: "https://github.com/yuvvantalreja",
       demoLink: "#"
     },
@@ -50,7 +41,7 @@ const Portfolio = () => {
       title: "Micro-pollution Detection",
       description: "Innovative solution for detecting air pollution through microscopic leaf analysis. Built dataset of 8,300 images and created both Raspberry Pi and mobile implementations.",
       tags: ["Python", "OpenCV", "Image Processing", "IoT"],
-      image: "/images/plant.jpg",
+      image: "/my-portfolio/images/plant.jpg",
       githubLink: "https://github.com/yuvvantalreja",
       demoLink: "#"
     },
@@ -58,7 +49,7 @@ const Portfolio = () => {
       title: "SightSafe AI",
       description: "Assistive technology for blind individuals using YOLO and OCR, achieving 92% accuracy in real-world testing. Implemented RANSAC algorithm for road lane detection.",
       tags: ["Python", "YOLO", "OCR", "Computer Vision"],
-      image: "/images/crossroad.png",
+      image: "/my-portfolio/images/crossroad.png",
       githubLink: "https://github.com/yuvvantalreja",
       demoLink: "#"
     }
@@ -343,7 +334,7 @@ const Portfolio = () => {
             <div className="mb-8 transform hover:scale-105 transition-all duration-500">
               <div className="relative group">
                 <img
-                  src="/images/profile.jpeg"
+                  src="/my-portfolio/images/profile.jpeg"
                   alt="Yuvvan Talreja"
                   className="rounded-full w-48 h-48 object-cover shadow-lg 
                            transition-transform duration-500 group-hover:rotate-6"
