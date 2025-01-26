@@ -250,7 +250,7 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Enhanced Navigation */}
+
       <nav className={`fixed w-full z-10 transition-all duration-500 ${
         scrolled ? 'bg-white/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
       }`}>
@@ -264,7 +264,7 @@ const Portfolio = () => {
               </span>
             </div>
             
-            {/* Desktop Navigation */}
+
             <div className="hidden md:flex items-center space-x-1">
               {['about', 'projects', 'experience', 'skills', 'contact'].map((section) => (
                 <button
@@ -287,7 +287,6 @@ const Portfolio = () => {
               ))}
             </div>
 
-            {/* Mobile menu button */}
             <div className="flex items-center md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -301,7 +300,6 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <div className={`md:hidden transition-all duration-500 ${
           isMenuOpen 
             ? 'max-h-96 opacity-100 backdrop-blur-lg bg-white/80' 
@@ -326,11 +324,9 @@ const Portfolio = () => {
         </div>
       </nav>
 
-      {/* Hero Section with New Buttons */}
       <div id="about" className="relative bg-white pt-24 overflow-hidden">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center relative z-10">
-            {/* Profile image section */}
             <div className="mb-8 transform hover:scale-105 transition-all duration-500">
               <div className="relative group">
                 <img
@@ -345,7 +341,6 @@ const Portfolio = () => {
               </div>
             </div>
             
-            {/* Text and buttons */}
             <div className="text-center">
               <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl 
                            sm:tracking-tight lg:text-6xl opacity-0 animate-fadeIn">
@@ -380,7 +375,6 @@ const Portfolio = () => {
           </div>
         </div>
         
-        {/* Animated background elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-100 rounded-full 
                          opacity-30 animate-float" 
@@ -408,7 +402,6 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Experience Section */}
       <div id="experience" className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 mb-12">Experience</h2>
@@ -420,7 +413,6 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Skills Section */}
       <div id="skills" className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 mb-12">Technical Skills</h2>
@@ -449,7 +441,6 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Contact Section */}
       <div id="contact" className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">
@@ -476,7 +467,6 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Animation Styles */}
       <style jsx global>{`
         @keyframes fadeIn {
           0% { opacity: 0; transform: translateY(20px); }
