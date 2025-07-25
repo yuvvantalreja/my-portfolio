@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvvan Talreja</title>
+    <meta name="description"
+        content="Computer Science student and aspiring software engineer showcasing projects and experience">
+
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='%23007AFF'/></svg>">
+</head>
+
+<body>
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+        <i class="mobile-nav-toggle-icon" data-lucide="menu"></i>
+    </button>
+
+    <!-- Navigation Overlay for Mobile -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="nav-header">
+                <div class="nav-profile">
+                    <img src="images/social-media-profile.png" alt="Yuvvan Talreja" class="nav-logo">
+                    <div class="nav-profile-info">
+                    </div>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Collapse sidebar">
+                    <i class="nav-toggle-icon" data-lucide="panel-left-close"></i>
+                </button>
+            </div>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="#about" class="nav-link" data-section="about">
+                        <i class="nav-link-icon" data-lucide="user"></i>
+                        <span class="nav-link-text">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects" class="nav-link" data-section="projects">
+                        <i class="nav-link-icon" data-lucide="folder"></i>
+                        <span class="nav-link-text">Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#experience" class="nav-link" data-section="experience">
+                        <i class="nav-link-icon" data-lucide="briefcase"></i>
+                        <span class="nav-link-text">Experience</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav-link" data-section="contact">
+                        <i class="nav-link-icon" data-lucide="mail"></i>
+                        <span class="nav-link-text">Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-footer">
+                <div class="nav-footer-text">© 2024 Yuvvan Talreja</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="fade-in-up">Hello, I'm</span>
+                        <span class="fade-in-up delay-1 first-name">Yuvvan Talreja 👋</span>
+                    </h1>
+                    <p class="hero-subtitle fade-in-up delay-2">
+                        ML Enthusiast, Software Developer, Roboticist, ECE @ Carnegie Mellon University
+                    </p>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <svg onclick="scrollToAbout()" class="mouse-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mouse-icon lucide-mouse">
+                    <rect x="5" y="2" width="14" height="20" rx="7" />
+                    <path d="M12 6v4" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Passionate about creating meaningful digital experiences</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-description">
+                            I'm a Computer Science student with a passion for software engineering and innovative
+                            problem-solving.
+                            I enjoy building meaningful applications that make a difference, from mobile apps to web
+                            platforms and everything in between.
+                        </p>
+                        <p class="about-description">
+                            When I'm not coding, you can find me exploring emerging technologies, working on personal
+                            projects,
+                            or collaborating with fellow developers on exciting challenges. I believe in continuous
+                            learning
+                            and staying at the forefront of technological advancement.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/profile.jpeg" alt="Yuvvan Talreja" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">A selection of my recent work</p>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="icon-design banyan-design">
+                                <div class="tree-column column-1">
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                </div>
+                                <div class="tree-column column-2">
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon main" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                </div>
+                                <div class="tree-column column-3">
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                </div>
+                                <div class="tree-column column-4">
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                </div>
+                                <div class="tree-column column-5">
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon" data-lucide="tree-deciduous"></i>
+                                    <i class="tree-icon flipped" data-lucide="tree-deciduous"></i>
+                                </div>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="https://usebanyan.com" class="project-link" target="_blank">View Project</a>
+                                <a href="https://github.com/banyan-ai/banyan" class="project-link"
+                                    target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Banyan</h3>
+                            <p class="project-description">
+                                Banyan – your all in one prompt infrastructure to build, test, and monitor AI powered
+                                apps
+                                from prototype to production. Visual drag-and-drop workflows, Git style versioning,
+                                prompt
+                                suggestions, A/B testing – all in one place.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Typescript</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="icon-design ellie-design">
+                                <div class="graduation-caps">
+                                    <i class="cap-icon main" data-lucide="graduation-cap"></i>
+                                    <i class="cap-icon floating cap-1" data-lucide="graduation-cap"></i>
+                                    <i class="cap-icon floating cap-2" data-lucide="graduation-cap"></i>
+                                    <i class="cap-icon floating cap-3" data-lucide="graduation-cap"></i>
+                                    <i class="cap-icon floating cap-4" data-lucide="graduation-cap"></i>
+                                    <i class="cap-icon floating cap-5" data-lucide="graduation-cap"></i>
+                                    <i class="cap-icon floating cap-6" data-lucide="graduation-cap"></i>
+                                    <i class="cap-icon floating cap-7" data-lucide="graduation-cap"></i>
+                                    <i class="cap-icon floating cap-8" data-lucide="graduation-cap"></i>
+                                </div>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Ellie</h3>
+                            <p class="project-description">
+                                Ellie is a powerful, customizable RAG system designed as an AI teaching assistant for
+                                university courses. Uses course-specific materials to provide accurate, contextually
+                                relevant answers to student questions with support for multiple courses and document
+                                types.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">RAG</span>
+                                <span class="tag">FAISS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="icon-design flowify-design">
+                                <div class="flow-rows">
+                                    <div class="flow-row row-1">
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                    </div>
+                                    <div class="flow-row row-2">
+                                        <i class="workflow-icon main" data-lucide="workflow"></i>
+                                        <i class="workflow-icon main" data-lucide="workflow"></i>
+                                        <i class="workflow-icon main" data-lucide="workflow"></i>
+                                        <i class="workflow-icon main" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                    </div>
+                                    <div class="flow-row row-3">
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                    </div>
+                                    <div class="flow-row row-4">
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                        <i class="workflow-icon" data-lucide="workflow"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Flowify</h3>
+                            <p class="project-description">
+                                An intelligent web application that transforms video content into intuitive, visual mind
+                                maps using advanced NLP techniques and clustering algorithms. Creates hierarchical
+                                visualizations without requiring generative AI.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">NLP</span>
+                                <span class="tag">Clustering</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="icon-design allocator-design">
+                                <div class="gear-system">
+                                    <i class="gear-icon main-gear" data-lucide="settings"></i>
+                                    <i class="gear-icon small-gear gear-1" data-lucide="settings"></i>
+                                    <i class="gear-icon small-gear gear-2" data-lucide="settings"></i>
+                                    <i class="gear-icon small-gear gear-3" data-lucide="settings"></i>
+                                    <i class="gear-icon small-gear gear-4" data-lucide="settings"></i>
+                                    <i class="gear-icon small-gear gear-5" data-lucide="settings"></i>
+                                </div>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dynamic Memory Allocator</h3>
+                            <p class="project-description">
+                                Implemented a custom memory allocator in C with efficient memory management strategies.
+                                Achieved performance comparable to standard malloc while reducing memory fragmentation
+                                by
+                                40% through optimized block coalescing.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">C</span>
+                                <span class="tag">Memory Management</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="icon-design scoreai-design">
+                                <div class="book-stack">
+                                    <i class="book-icon main-book" data-lucide="book-check"></i>
+                                    <i class="book-icon floating-book book-1" data-lucide="book-check"></i>
+                                    <i class="book-icon floating-book book-2" data-lucide="book-check"></i>
+                                </div>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Score.ai</h3>
+                            <p class="project-description">
+                                AI-powered application for automated grading of handwritten assignments. Uses OCR and
+                                natural language processing to analyze student submissions and provide detailed feedback
+                                with interfaces for both students and instructors.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">OCR</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="icon-design captcha-design">
+                                <div class="scan-container">
+                                    <i class="scan-icon main-eye" data-lucide="eye"></i>
+                                    <div class="scan-line"></div>
+                                    <div class="corner-brackets">
+                                        <div class="bracket top-left"></div>
+                                        <div class="bracket top-right"></div>
+                                        <div class="bracket bottom-left"></div>
+                                        <div class="bracket bottom-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link">View Project</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">CAPTCHA Image Recognition</h3>
+                            <p class="project-description">
+                                Engineered a sophisticated OCR system utilizing CRNN architecture with BiGRU, achieving
+                                98%
+                                accuracy. Optimized training time by 50% and increased F1 score by 10%.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">C</span>
+                                <span class="tag">Memory Management</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Experience</h2>
+                    <p class="section-subtitle">My academic and professional journey</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Computer Science Student</h3>
+                                <span class="timeline-company">University</span>
+                                <span class="timeline-date">2022 - Present</span>
+                            </div>
+                            <p class="timeline-description">
+                                Pursuing Computer Science degree with focus on software engineering, algorithms, and
+                                emerging technologies. Active in research projects and technical presentations.
+                            </p>
+                            <ul class="timeline-achievements">
+                                <li>Maintained strong academic performance in core CS subjects</li>
+                                <li>Participated in research projects and technical presentations</li>
+                                <li>Developed multiple projects using various programming languages</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Software Development Intern</h3>
+                                <span class="timeline-company">Tech Startup</span>
+                                <span class="timeline-date">Summer 2023</span>
+                            </div>
+                            <p class="timeline-description">
+                                Gained hands-on experience in software development, working on mobile applications and
+                                contributing to various development projects in an agile environment.
+                            </p>
+                            <ul class="timeline-achievements">
+                                <li>Developed features for mobile applications using modern frameworks</li>
+                                <li>Collaborated with senior developers on code reviews and best practices</li>
+                                <li>Participated in daily standups and sprint planning sessions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Programming Tutor</h3>
+                                <span class="timeline-company">University Learning Center</span>
+                                <span class="timeline-date">2022 - 2023</span>
+                            </div>
+                            <p class="timeline-description">
+                                Provided tutoring support to fellow students in programming fundamentals, data
+                                structures,
+                                and algorithms, helping them develop strong coding skills and problem-solving abilities.
+                            </p>
+                            <ul class="timeline-achievements">
+                                <li>Tutored 20+ students in Java, Python, and programming concepts</li>
+                                <li>Developed teaching materials and coding exercises</li>
+                                <li>Improved student understanding of complex algorithms and data structures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p class="section-subtitle">Ready to bring your ideas to life</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>I'm always interested in new opportunities, internships, and exciting projects. Whether you
+                            have
+                            a question about my work or just want to connect, feel free to reach out.</p>
+                        <div class="contact-links">
+                            <a href="mailto:talrejayuvvan@gmail.com" class="contact-link">
+                                talrejayuvvan@gmail.com
+                            </a>
+                            <a href="https://www.linkedin.com/in/yuvvan-talreja-3b759a13b/" class="contact-link">
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/yuvvantalreja" class="contact-link">
+                                GitHub
+                            </a>
+                            <a href="https://x.com/yuvvantalreja" class="contact-link">
+                                Twitter/X
+                            </a>
+                            <a href="https://www.instagram.com/yuvvan_talreja/" class="contact-link">
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div> <!-- End Main Content -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+    <script src="motion-animations.js"></script>
+</body>
+
+</html>
