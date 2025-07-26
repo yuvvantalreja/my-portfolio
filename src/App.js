@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
 import './styles/App.css';
+import AnimatedCursor from "react-animated-cursor";
 
 function App() {
   useEffect(() => {
@@ -20,16 +21,38 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Navigation />
-      <div className="main-content">
-        <Hero />
-        <About />
-        <Projects />
-        <Experience />
-      <Footer/>
+    <>
+      <AnimatedCursor
+        innerSize={32}
+        color="120,120,120"
+        innerScale={0.7}
+        outerStyle={{
+          border: '2px solid #b0b0b0',
+          display: 'none'
+        }}
+        innerStyle={{
+          backgroundColor: 'rgba(176, 176, 176, 0.5)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+          borderRadius: '50%',
+          zIndex: 9999,
+          position: 'fixed'
+        }}
+        showSystemCursor={false}
+      />
+      <div className="App">
+        <Navigation />
+        <div className="main-content">
+          <Hero />
+          <About />
+          <Projects />
+          <Experience />
+        <Footer/>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
