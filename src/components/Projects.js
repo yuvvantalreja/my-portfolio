@@ -214,70 +214,82 @@ const Projects = () => {
             </div>
           </div>
         );
-      case 'allocator':
+        case 'allocator':
+        // Memory block animation: blocks of varying sizes, animated allocation/freeing
+        const blockCount = 8;
+        const blocks = Array.from({ length: blockCount });
+
         return (
-          <div className="icon-design allocator-design">
-            <div className="gear-system">
-              {/* Central main gear */}
-              <motion.div
-                className="gear-center"
-                animate={{ rotate: [0, 360], y: [80, 80] }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              >
-                <Settings className="gear-icon main-gear" size={32} />
-              </motion.div>
-              
-              {/* 18 gears arranged in concentric circles */}
-              {[...Array(18)].map((_, i) => {
-                const angle = (i * 360) / 18; // Distribute evenly in circle
-                const radius = i < 6 ? 80 : i < 12 ? 120 : 160; // Three concentric circles
-                const size = i < 6 ? 24 : i < 12 ? 20 : 16; // Different sizes for each ring
-                
-                return (
-                  <motion.div
-                    key={i}
-                    className={`gear-orbit gear-${i + 1}`}
-                    style={{
-                      position: 'absolute',
-                      left: '50%',
-                      top: '50%',
-                      transformOrigin: '0 0'
-                    }}
-                    animate={{ 
-                      rotate: [0, i % 2 === 0 ? 360 : -360],
-                      x: [
-                        Math.cos((angle * Math.PI) / 180) * radius - size/2,
-                        Math.cos(((angle + 180) * Math.PI) / 180) * radius - size/2,
-                        Math.cos((angle * Math.PI) / 180) * radius - size/2
-                      ],
-                      y: [
-                        Math.sin((angle * Math.PI) / 180) * radius - size/2,
-                        Math.sin(((angle + 180) * Math.PI) / 180) * radius - size/2,
-                        Math.sin((angle * Math.PI) / 180) * radius - size/2
-                      ],
-                      scale: [1, 1.2, 1]
-                    }}
-                    transition={{
-                      duration: 12 + (i % 6),
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: i * 0.2
-                    }}
-                  >
-                    <Settings 
-                      className={`gear-icon revolving-gear`} 
-                      size={size} 
-                    />
-                  </motion.div>
-                );
-              })}
+          <div className="icon-design allocator-design" style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+            <div style={{ display: 'flex', width: '90%', height: '60%', gap: '6px', alignItems: 'center', justifyContent: 'center' }}>
+              {blocks.map((_, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ scaleY: 0.7, opacity: 0.7 }}
+                  animate={{
+                    scaleY: [0.7, 1.1, 1, 0.7],
+                    opacity: [0.7, 1, 0.9, 0.7],
+                    backgroundColor: [
+                      'rgba(135,176,174,0.15)',
+                      'rgba(135,176,174,0.7)',
+                      'rgba(135,176,174,1)',
+                      'rgba(135,176,174,0.15)'
+                    ],
+                    boxShadow: [
+                      '0 2px 8px rgba(135,176,174,0.05)',
+                      '0 4px 16px rgba(135,176,174,0.15)',
+                      '0 6px 24px rgba(135,176,174,0.18)',
+                      '0 2px 8px rgba(135,176,174,0.05)'
+                    ]
+                  }}
+                  transition={{
+                    duration: 2.5 + i * 0.2,
+                    repeat: Infinity,
+                    repeatType: 'loop',
+                    delay: i * 0.18,
+                    ease: 'easeInOut'
+                  }}
+                  style={{
+                    width: `${12 + (i % 3) * 10}%`,
+                    height: '100%',
+                    borderRadius: '10px',
+                    margin: '0 2px'
+                  }}
+                />
+              ))}
             </div>
+            {/* Optional: Allocator pointer */}
+            <motion.div
+              className="allocator-pointer"
+              style={{
+                position: 'absolute',
+                top: '10%',
+                left: '5%',
+                width: '10%',
+                height: '80%',
+                borderRadius: '8px',
+                background: 'rgba(33, 33, 33, 0.12)',
+                border: '2px solid #87b0ae',
+                zIndex: 2,
+                pointerEvents: 'none'
+              }}
+              animate={{
+                left: ['5%', '80%', '5%'],
+                boxShadow: [
+                  '0 0 0 0 #87b0ae44',
+                  '0 0 16px 4px #87b0ae88',
+                  '0 0 0 0 #87b0ae44'
+                ]
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              }}
+            />
           </div>
         );
+
       case 'scoreai':
         return (
           <div className="icon-design scoreai-design">
