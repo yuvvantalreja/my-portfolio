@@ -24,14 +24,12 @@ function App() {
     <>
       <AnimatedCursor
         innerSize={32}
-        color="120,120,120"
         innerScale={0.7}
         outerStyle={{
-          border: '2px solid #b0b0b0',
           display: 'none'
         }}
         innerStyle={{
-          backgroundColor: 'rgba(176, 176, 176, 0.5)',
+          backgroundColor: 'rgba(100, 100, 100, 0.5)',
           backdropFilter: 'blur(8px)',
           WebkitBackdropFilter: 'blur(8px)',
           border: '1px solid rgba(255, 255, 255, 0.2)',
