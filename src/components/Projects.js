@@ -56,8 +56,8 @@ const Projects = () => {
       description: 'Ellie is a powerful, customizable RAG system designed as an AI teaching assistant for university courses. Uses course-specific materials to provide accurate, contextually relevant answers to student questions with support for multiple courses and document types.',
       tags: ['Python', 'RAG', 'FAISS'],
       links: {
-        demo: '#',
-        github: '#'
+        demo: 'https://ellie-ai.onrender.com',
+        github: 'https://github.com/yuvvantalreja/ellie-ai'
       },
       iconComponent: 'ellie'
     },
@@ -67,8 +67,8 @@ const Projects = () => {
       description: 'An intelligent web application that transforms video content into intuitive, visual mind maps using advanced NLP techniques and clustering algorithms. Creates hierarchical visualizations without requiring generative AI.',
       tags: ['NLP', 'Clustering'],
       links: {
-        demo: '#',
-        github: '#'
+        demo: 'https://youtu.be/yjlV7t9mcps?si=BcT8aV1DTdma_qkK',
+        github: 'https://github.com/yuvvantalreja/flowify'
       },
       iconComponent: 'flowify'
     },
@@ -78,8 +78,8 @@ const Projects = () => {
       description: 'Implemented a custom memory allocator in C with efficient memory management strategies. Achieved performance comparable to standard malloc while reducing memory fragmentation by 40% through optimized block coalescing.',
       tags: ['C', 'Memory Management'],
       links: {
-        demo: '#',
-        github: '#'
+        demo: 'https://github.com/yuvvantalreja/dynamic-memory-allocator',
+        github: 'https://github.com/yuvvantalreja/dynamic-memory-allocator'
       },
       iconComponent: 'allocator'
     },
@@ -89,8 +89,8 @@ const Projects = () => {
       description: 'AI-powered application for automated grading of handwritten assignments. Uses OCR and natural language processing to analyze student submissions and provide detailed feedback with interfaces for both students and instructors.',
       tags: ['Python', 'FastAPI', 'OCR'],
       links: {
-        demo: '#',
-        github: '#'
+        demo: 'https://github.com/yuvvantalreja/score-ai',
+        github: 'https://github.com/yuvvantalreja/score-ai'
       },
       iconComponent: 'scoreai'
     },
@@ -100,8 +100,8 @@ const Projects = () => {
       description: 'Engineered a sophisticated OCR system utilizing CRNN architecture with BiGRU, achieving 98% accuracy. Optimized training time by 50% and increased F1 score by 10%.',
       tags: ['Python', 'Deep Learning', 'OCR'],
       links: {
-        demo: '#',
-        github: '#'
+        demo: 'https://colab.research.google.com/drive/1xoJURWvjInwRa6f4TSCr7HLTsDbY3A3O',
+        github: 'https://github.com/yuvvantalreja/CAPTCHA-Image-Recognition-using-CRNN-and-BiGRU'
       },
       iconComponent: 'captcha'
     }
