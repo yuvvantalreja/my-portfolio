@@ -94,7 +94,7 @@ const Navigation = () => {
     { id: 'about', label: 'About', icon: User },
     { id: 'projects', label: 'Projects', icon: Folder },
     { id: 'experience', label: 'Experience', icon: Briefcase },
-    { id: 'contact', label: 'Contact', icon: Mail }
+    { id: 'footer', label: 'Socials', icon: Mail }
   ];
 
   return (
@@ -230,10 +230,6 @@ const Navigation = () => {
               );
             })}
           </ul>
-
-          <div className={`nav-footer ${isCollapsed ? 'collapsed' : ''}`}>
-            <div className="nav-footer-text">© 2024 Yuvvan Talreja</div>
-          </div>
         </div>
       </nav>
     </>
