@@ -78,11 +78,11 @@ const About = () => {
         >
           <motion.div className="about-text" variants={itemVariants}>
             <p className="about-description">
-              Hey👋, I'm Yuvvan! I love building things. I enjoy creating meaningful technology — whether it’s software that empowers people, robots that learn, or circuits that bring ideas to life.
+              Hey👋, I'm Yuvvan! I love building things. I enjoy creating meaningful technology, whether it’s software that empowers people, robots that learn, or circuits that bring ideas to life.
             </p>
             <p className="about-description">
               When I'm not building, you can find me exploring new coffee shops, going for runs, listening to music, or 
-              collaborating with my friends to solve interesting problems. I believe that the best work happens when creativity meets intention — and that great work happens when curiosity, craft, and care come together.
+              collaborating with my friends to solve interesting problems. I believe that the best work happens when creativity meets intention.
             </p>
           </motion.div>
           <motion.div className="about-image" variants={itemVariants}>
