@@ -40,7 +40,7 @@ const Navigation = () => {
       }
     };
 
-    // Handle window resize
+
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setIsMobileOpen(false);
@@ -50,7 +50,7 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-    handleScroll(); // Call once on load
+    handleScroll(); 
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -65,7 +65,7 @@ const Navigation = () => {
 
   const toggleMobileNav = () => {
     setIsMobileOpen(!isMobileOpen);
-    // Prevent body scroll when mobile nav is open
+
     if (!isMobileOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -83,7 +83,7 @@ const Navigation = () => {
       });
     }
 
-    // Close mobile nav
+
     if (window.innerWidth <= 768) {
       setIsMobileOpen(false);
       document.body.style.overflow = '';
@@ -99,7 +99,7 @@ const Navigation = () => {
 
   return (
     <>
-      {/* Mobile Navigation Toggle */}
+
       <motion.button 
         className="mobile-nav-toggle" 
         onClick={toggleMobileNav}
@@ -117,11 +117,11 @@ const Navigation = () => {
         </motion.div>
       </motion.button>
 
-      {/* Mobile Navigation Dock */}
+
       <AnimatePresence>
         {isMobileOpen && (
           <>
-            {/* Backdrop */}
+
             <motion.div 
               className="mobile-nav-backdrop"
               initial={{ opacity: 0 }}
@@ -131,7 +131,7 @@ const Navigation = () => {
               onClick={toggleMobileNav}
             />
             
-            {/* Mobile Navigation Dock */}
+
             <motion.div 
               className="mobile-nav-dock"
               initial={{ y: -100, opacity: 0 }}
@@ -144,7 +144,7 @@ const Navigation = () => {
                 duration: 0.4
               }}
             >
-              {/* Profile Section */}
+
               <motion.div 
                 className="mobile-nav-profile"
                 initial={{ y: -20, opacity: 0 }}
@@ -158,7 +158,7 @@ const Navigation = () => {
                 </div>
               </motion.div>
 
-              {/* Navigation Links */}
+
               <motion.div 
                 className="mobile-nav-links"
                 initial={{ y: -20, opacity: 0 }}
@@ -201,7 +201,7 @@ const Navigation = () => {
         )}
       </AnimatePresence>
 
-      {/* Desktop Sidebar Navigation */}
+
       <nav className={`nav ${isCollapsed ? 'collapsed' : ''} nav-${navTheme}`}>
         <div className="nav-container">
           <div className={`nav-header ${isCollapsed ? 'collapsed' : ''}`}> 

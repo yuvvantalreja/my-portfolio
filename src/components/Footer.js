@@ -81,7 +81,7 @@ const Footer = () => {
   return (
     <footer className="footer" id="footer" ref={sectionRef}>
       <div className="footer-container">
-        {/* Subtle gradient separator */}
+
         <motion.div 
           className="footer-separator"
           initial={{ scaleX: 0 }}
@@ -95,7 +95,7 @@ const Footer = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          {/* Main content */}
+
           <motion.div className="footer-main" variants={itemVariants}>
             <motion.div 
               className="footer-brand"
@@ -105,7 +105,7 @@ const Footer = () => {
               <h3 className="footer-title">Yuvvan Talreja</h3>
             </motion.div>
             
-            {/* Social Links */}
+           
             <motion.div className="footer-social" variants={itemVariants}>
               <div className="footer-social-links">
                 {socialLinks.map((social, index) => {
@@ -142,7 +142,7 @@ const Footer = () => {
             </motion.div>
           </motion.div>
 
-          {/* Back to top button */}
+         
           <motion.button
             className="footer-back-to-top"
             onClick={scrollToTop}
@@ -157,7 +157,7 @@ const Footer = () => {
             <span>Back to top</span>
           </motion.button>
 
-          {/* Copyright */}
+
           <motion.div className="footer-bottom" variants={itemVariants}>
             <motion.p 
               className="footer-made-with"

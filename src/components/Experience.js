@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 
-// Import images properly for React
 import cmuHciiLogo from '../assets/CMU-HCII.jpeg';
 import airlabLogo from '../assets/airlab.jpeg';
 import cmuEngineeringLogo from '../assets/cmu-engineering.jpeg';
@@ -12,13 +11,12 @@ const Experience = () => {
   const sectionRef = useRef();
   const timelineRef = useRef();
   
-  // Scroll-based animations
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
   });
 
-  // Timeline darkening effect based on scroll
   const timelineOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 0.6, 0.9, 1]);
   const timelineWidth = useTransform(scrollYProgress, [0, 0.5, 1], [2, 3, 4]);
 
@@ -100,7 +98,6 @@ const Experience = () => {
     }
   ];
 
-  // Individual experience card component with progressive disclosure
   const ExperienceCard = ({ experience, index }) => {
     const cardRef = useRef();
     const isInView = useInView(cardRef, { once: true, margin: "-100px" });
@@ -117,7 +114,7 @@ const Experience = () => {
         scale: 1,
         transition: {
           duration: 0.8,
-          ease: [0.25, 0.46, 0.45, 0.94], // Apple's preferred easing
+          ease: [0.25, 0.46, 0.45, 0.94],
           delay: index * 0.15
         }
       }
@@ -236,8 +233,7 @@ const Experience = () => {
             variants={containerVariants}
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
-          >
-            {/* Animated timeline line */}
+          >   
             <motion.div 
               className="timeline-line"
               style={{ 

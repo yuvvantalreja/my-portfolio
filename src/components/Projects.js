@@ -215,7 +215,6 @@ const Projects = () => {
           </div>
         );
         case 'allocator':
-        // Memory block animation: blocks of varying sizes, animated allocation/freeing
         const blockCount = 8;
         const blocks = Array.from({ length: blockCount });
 
@@ -258,7 +257,6 @@ const Projects = () => {
                 />
               ))}
             </div>
-            {/* Optional: Allocator pointer */}
             <motion.div
               className="allocator-pointer"
               style={{
@@ -294,7 +292,6 @@ const Projects = () => {
         return (
           <div className="icon-design scoreai-design">
             <div className="book-collection">
-              {/* Main central book stack */}
               <div className="book-stack-center">
                 
                   <motion.div
@@ -317,11 +314,10 @@ const Projects = () => {
                 
               </div>
               
-              {/* Floating books in circular pattern */}
               {[...Array(12)].map((_, i) => {
                 const angle = (i * 360) / 12;
-                const radius = 60 + (i % 3) * 20; // Varying distances
-                const size = 16 + (i % 4) * 2; // Varying sizes
+                const radius = 60 + (i % 3) * 20; 
+                const size = 16 + (i % 4) * 2; 
                 
                 return (
                   <motion.div
@@ -364,7 +360,6 @@ const Projects = () => {
                 );
               })}
               
-              {/* Additional scattered books */}
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={`scattered-${i}`}
