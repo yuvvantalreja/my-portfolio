@@ -1251,6 +1251,285 @@ p {
     }
 }
 
+/* Control Center Styles - Apple-inspired */
+.control-center-toggle {
+    position: fixed;
+    top: max(env(safe-area-inset-top), var(--spacing-md));
+    right: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast), color 0.4s ease;
+    color: var(--color-text-secondary);
+    z-index: 1002;
+}
+
+.control-center-toggle:hover {
+    color: var(--color-text-primary);
+}
+
+/* Control Center Panel */
+.control-center-panel {
+    position: fixed;
+    top: max(env(safe-area-inset-top), 80px);
+    right: var(--spacing-md);
+    width: 280px;
+    max-width: calc(100vw - 2 * var(--spacing-md));
+    background: rgba(74, 74, 74, 0.3);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border: none;
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    padding: 12px;
+    transform-origin: top right;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+/* Control Center Grid */
+.control-center-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+/* Control Cards */
+.control-card {
+    background: rgba(182, 181, 181);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: none;
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 70px;
+}
+
+.control-card:hover {
+    background: rgba(99, 99, 102, 0.9);
+    transform: scale(1.02);
+}
+
+.control-card:active {
+    transform: scale(0.98);
+    background: rgba(72, 72, 76, 0.9);
+}
+
+.control-card.large {
+    grid-column: span 2;
+    min-height: 70px;
+    padding: 18px;
+}
+
+.control-card.medium {
+    grid-column: span 1;
+    min-height: 70px;
+}
+
+.control-card.small {
+    grid-column: span 1;
+    min-height: 70px;
+}
+
+/* Control Card Content */
+.control-card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+}
+
+.control-card-icon {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    transition: all var(--transition-fast);
+}
+
+.control-card.large .control-card-icon {
+    margin-bottom: 8px;
+}
+
+.control-card-text {
+    flex-grow: 0;
+}
+
+.control-card-text h4 {
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-semibold);
+    color: white;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.control-card.large .control-card-text h4 {
+    font-size: 0.95rem;
+}
+
+
+.control-card.large .control-card-text p {
+    font-size: 0.85rem;
+}
+
+/* Mobile Responsive for Control Center */
+@media (max-width: 768px) {
+    .control-center-toggle {
+        top: max(env(safe-area-inset-top), 16px);
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        z-index: 1003; /* Above mobile nav */
+    }
+
+    .control-center-panel {
+        top: max(env(safe-area-inset-top), 70px);
+        right: 16px;
+        left: 16px;
+        width: auto;
+        max-width: none;
+        margin: 0;
+        background: rgba(72, 72, 74, 0.95);
+    }
+
+    .control-center-grid {
+        gap: 8px;
+    }
+
+    .control-card {
+        padding: 14px;
+        min-height: 65px;
+    }
+
+    .control-card.large {
+        min-height: 65px;
+        padding: 16px;
+    }
+
+    .control-card.medium {
+        min-height: 65px;
+    }
+
+    .control-card.small {
+        min-height: 65px;
+    }
+
+    .control-card-text h4 {
+        font-size: 0.85rem;
+    }
+
+    .control-card.large .control-card-text h4 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .control-center-panel {
+        top: max(env(safe-area-inset-top), 65px);
+        padding: 14px;
+        width: calc(100vw - 32px);
+    }
+
+    .control-center-grid {
+        gap: 6px;
+    }
+
+    .control-card {
+        padding: 12px;
+        min-height: 60px;
+    }
+
+    .control-card.large {
+        min-height: 80px;
+        padding: 16px;
+    }
+
+    .control-card-text h4 {
+        font-size: 0.85rem;
+    }
+
+    .control-card.large .control-card-text h4 {
+        font-size: 0.95rem;
+    }
+}
+
+/* Special card styling based on service */
+.control-card[data-service="github"] {
+    background: linear-gradient(135deg, rgba(36, 41, 46, 0.2), rgba(255, 255, 255));
+}
+
+.control-card[data-service="linkedin"] {
+    background: linear-gradient(135deg, rgba(0, 119, 181, 0.2), rgba(255, 255, 255));
+}
+
+.control-card[data-service="twitter"] {
+    background: linear-gradient(135deg, rgba(29, 161, 242, 0.2), rgba(255, 255, 255, 0.7));
+}
+
+.control-card[data-service="resume"] {
+    background: linear-gradient(135deg, rgba(135, 176, 174, 0.5), rgba(255, 255, 255, 0.7));
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .control-center-toggle,
+    .control-card,
+    .control-card-arrow {
+        transition: none;
+    }
+    
+    .control-center-toggle:hover {
+        transform: none;
+    }
+    
+    .control-card:hover {
+        transform: none;
+    }
+}
+
+/* Dark theme support for control center toggle */
+.control-center-toggle {
+    color: var(--color-text-secondary);
+}
+
+.control-center-toggle:hover {
+    color: var(--color-text-primary);
+}
+
+/* High contrast mode support for control center */
+@media (prefers-contrast: high) {
+    .control-center-panel {
+        background: var(--color-background-light);
+        border: 2px solid var(--color-border);
+    }
+    
+    .control-card {
+        background: var(--color-background-light);
+        border: 2px solid var(--color-border);
+    }
+    
+    .control-center-toggle {
+        background: var(--color-background-light);
+        border: 2px solid var(--color-border);
+    }
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
     .timeline-content,

@@ -4,15 +4,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import profileImage from '../assets/social-media-profile.png';
 
 const Navigation = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [navTheme, setNavTheme] = useState('light');
 
   useEffect(() => {
     const savedState = localStorage.getItem('sidebarCollapsed');
-    if (savedState === 'true') {
-      setIsCollapsed(true);
+    if (savedState !== null) {
+      setIsCollapsed(savedState === 'true');
     }
 
     const handleScroll = () => {
@@ -113,7 +113,7 @@ const Navigation = () => {
           animate={{ rotate: isMobileOpen ? 90 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          {isMobileOpen ? <X size={24} color={isMobileOpen ? 'white' : '#1d1d1f'} /> : <PanelTopOpen size={24} />}
+          {isMobileOpen ? <X size={24} color={isMobileOpen ? 'white' : '#1d1d1f'} /> : <Menu size={24} color="#1d1d1f" />}
         </motion.div>
       </motion.button>
 

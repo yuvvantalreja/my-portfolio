@@ -49,13 +49,11 @@ const Contact = () => {
   };
 
   const showNotification = (message, type = 'info') => {
-    // Remove existing notifications
     const existingNotification = document.querySelector('.notification');
     if (existingNotification) {
       existingNotification.remove();
     }
 
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
@@ -65,7 +63,6 @@ const Contact = () => {
       </div>
     `;
 
-    // Add notification styles
     notification.style.cssText = `
       position: fixed;
       top: 100px;
@@ -107,21 +104,17 @@ const Contact = () => {
     closeBtn.addEventListener('mouseenter', () => closeBtn.style.opacity = '1');
     closeBtn.addEventListener('mouseleave', () => closeBtn.style.opacity = '0.8');
 
-    // Add to DOM
     document.body.appendChild(notification);
 
-    // Animate in
     requestAnimationFrame(() => {
       notification.style.opacity = '1';
       notification.style.transform = 'translateX(0)';
     });
 
-    // Auto remove after 5 seconds
     const autoRemove = setTimeout(() => {
       removeNotification(notification);
     }, 5000);
 
-    // Manual close
     closeBtn.addEventListener('click', () => {
       clearTimeout(autoRemove);
       removeNotification(notification);
@@ -141,7 +134,6 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic form validation
     if (!formData.name || !formData.email || !formData.message) {
       showNotification('Please fill in all fields.', 'error');
       return;
@@ -154,7 +146,6 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
     setTimeout(() => {
       showNotification('Thank you! Your message has been sent.', 'success');
       setFormData({ name: '', email: '', message: '' });

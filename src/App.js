@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from './components/Navigation';
+import ControlCenter from './components/ControlCenter';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -59,6 +60,7 @@ function App() {
           <Experience />
         <Footer/>
         </div>
+        <ControlCenter />
       </div>
     </>
   );
