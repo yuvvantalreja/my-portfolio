@@ -56,7 +56,7 @@ const Projects = () => {
       description: 'Ellie is a powerful, customizable RAG system designed as an AI teaching assistant for university courses. Uses course-specific materials to provide accurate, contextually relevant answers to student questions with support for multiple courses and document types.',
       tags: ['Python', 'RAG', 'FAISS'],
       links: {
-        demo: 'https://ellie-ai.onrender.com',
+        demo: 'https://youtu.be/sQdA0E5u7ao',
         github: 'https://github.com/yuvvantalreja/ellie-ai'
       },
       iconComponent: 'ellie'
