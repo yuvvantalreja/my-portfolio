@@ -33,7 +33,7 @@ function App() {
     <>
       {!isTouchDevice && (
         <AnimatedCursor
-          innerSize={32}
+          innerSize={30}
           innerScale={0.7}
           outerStyle={{
             display: 'none'
