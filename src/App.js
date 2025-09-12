@@ -60,7 +60,7 @@ function App() {
           <Experience />
         <Footer/>
         </div>
-        <ControlCenter />
+        {/* <ControlCenter /> */}
       </div>
     </>
   );
