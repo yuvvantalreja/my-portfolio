@@ -59,12 +59,7 @@ const Experience = () => {
       logo: airlabLogo,
       company: 'AirLab @ CMU',
       date: `Mar '25 - May '25`,
-      description: 'Contributed to the Unified Spherical Frontend project at CMU\'s AirLAB',
-      achievements: [
-        'Developed a generic strategy for visual perception tasks in spherical space that abstracts away hardware-related artifacts like lens distortion, resolution variations, and focal length differences across camera systems',
-        'Worked on the Vega Editor, a tool for creating and editing spherical visualizations',
-        'Participated in daily standups and sprint planning sessions'
-      ],
+      description: "Contributed to the Unified Spherical Frontend project at CMU\'s AirLAB. \n Developed a generic strategy for visual perception tasks in spherical space that abstracts away hardware-related artifacts like lens distortion, resolution variations, and focal length differences across camera systems",
       color: '#1f4e79'
     },
     {
